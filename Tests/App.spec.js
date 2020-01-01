@@ -35,4 +35,11 @@ describe('App Component', () => {
     expect(component.length).toBe(1);
   });
 
+  it('Should btn update', () => {
+    const classInstance = wrapper.instance();
+    classInstance.changeValue();
+    const newState = classInstance.state.hideBtn;
+    expect(newState).toBe(true);
+  });
+
 })

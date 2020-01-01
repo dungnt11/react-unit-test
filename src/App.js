@@ -9,8 +9,18 @@ import { connect } from 'react-redux';
 import { fetchPost } from './actions';
 
 class App extends Component {
+  state = {
+    hideBtn: false
+  }
+
   fetch() {
     this.props.fetchPost();
+    this.changeValue();
+  }
+
+  changeValue() {
+    const { hideBtn } = this.state;
+    this.setState({ hideBtn: !hideBtn });
   }
 
   render() {
@@ -26,6 +36,8 @@ class App extends Component {
       emitEvent: this.fetch.bind(this)
     };
 
+    const { hideBtn } = this.state;
+
     return (
       <div data-test='appComponent'>
         <Header />
@@ -39,8 +51,7 @@ class App extends Component {
             return <ListItem title={title} desc={body} key={index} />
           })}
         </div> : null}
-
-        <Button {...configButton} />
+        {!hideBtn ? <Button {...configButton} /> : null}
       </div>
     )
   }
