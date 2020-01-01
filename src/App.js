@@ -15,7 +15,6 @@ class App extends Component {
 
   render() {
     const { posts } = this.props;
-    console.log(posts)
     const info = [{
       name: "Joe",
       age: 20,
@@ -28,7 +27,7 @@ class App extends Component {
     };
 
     return (
-      <div>
+      <div data-test='appComponent'>
         <Header />
         <section className="main">
           <Headline header="Header" desc="Description" tempArr={info} />

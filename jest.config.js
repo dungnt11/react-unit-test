@@ -8,4 +8,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx'],
   setupFilesAfterEnv: ["<rootDir>Tests/setupTest.js"],
   testRegex: "((\\.|/*.)(spec))\\.js?$",
+  "moduleNameMapper": {
+    "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+  }
 }
