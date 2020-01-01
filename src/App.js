@@ -17,7 +17,7 @@ export default class App extends Component {
       <div>
         <Header />
         <section className="main">
-          <Headline header="Header" desc="Description" tempArr={{ info }} />
+          <Headline header="Header" desc="Description" tempArr={info} />
         </section>
       </div>
     )
