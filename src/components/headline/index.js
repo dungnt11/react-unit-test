@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropsTypes from 'prop-types';
 
 export default class Headline extends Component {
   render() {
@@ -15,4 +16,14 @@ export default class Headline extends Component {
       </div>
     )
   }
+}
+
+Headline.propTypes = {
+  header: PropsTypes.string,
+  desc: PropsTypes.string,
+  tempArr: PropsTypes.arrayOf(PropsTypes.shape({
+    name: PropsTypes.string,
+    age: PropsTypes.number,
+    married: PropsTypes.bool,
+  }))
 }
